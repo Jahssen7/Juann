@@ -6,42 +6,39 @@ body {
 }
 
 .grid-container {
-  padding-top: auto; /* Biar ada jarak dari atas layar desktop */
+  padding-top: auto; 
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 12px;
-  
-  /* UBAH BAGIAN INI: */
-  width: 90%;          /* Menggunakan persentase agar menyesuaikan layar */
-  max-width: 900px;    /* Batas maksimal lebarnya di desktop (bisa dinaikkan misal 1000px kalau kurang lebar) */
-  margin:35px auto;   /* auto berfungsi untuk menempatkan container tepat di TENGAH layar desktop */
+  width: 90%;          
+  max-width: 900px;    
+  margin:35px auto;   
   
   height: auto;
   min-height: 400px;
 }
 
 .dear-juan {
-  grid-column: 2 / 6; /* Dibuat sejajar dengan isi pesan */
-  grid-row: 1 / 2;    /* Ditaruh di baris paling atas (baris 1) */
+  grid-column: 2 / 6; 
+  grid-row: 1 / 2;    
   color: white;
   font-family:'Playfair Display', serif;
-  text-align: left;   /* Ubah jadi left biar rapi seperti format surat */
-  margin-top: 20px;   /* Tambahan sedikit jarak dari atas biar gak terlalu mepet */
+  text-align: left;   
+  margin-top: 20px;   
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .message {
   grid-column: 2 / 6; 
-  grid-row: 2 / 6;    /* Isi pesan ditaruh di bawahnya (baris 2 sampai 5) */
+  grid-row: 2 / 6;    
   color: white;
   font-family: 'Lora', serif;
-  line-height: 1.5 ;   /* Tambahan: biar jarak antar baris teks lebih enak dibaca */
+  line-height: 1.5 ;   
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Container Player */
 .pemutar-musik {
     margin-right: 100px;
     margin: 25px;
@@ -74,26 +71,22 @@ body {
     border-radius: 20px;
     object-fit: cover;
     margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 
+                0 0 30px rgba(255, 255, 255, 0.1); 
     
-    /* Tambahkan kode ini untuk efek Glow & Vignette */
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); /* Glow tipis */
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), /* Vignette dalam */
-                0 0 30px rgba(255, 255, 255, 0.1); /* Glow luar lebih besar */
-    
-    transition: 0.3s; /* Tambahkan transisi biar halus saat di-hover */
+    transition: 0.3s; 
 }
 
-/* Efek bernapas saat di-hover (opsional, tapi keren) */
 .gambar-lagu:hover {
-    transform: scale(1.03); /* Sedikit membesar */
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); /* Glow makin terang */
+    transform: scale(1.03); 
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); 
 }
 
-/* Styling Bar Musik (Custom Range) */
 #progress-bar {
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     width: 100%;
-    height: 4px; /* Sangat tipis agar modern */
+    height: 4px; 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     outline: none;
@@ -101,20 +94,18 @@ body {
     margin-top: 15px;
 }
 
-/* Bagian bar yang terisi */
 #progress-bar::-webkit-slider-runnable-track {
     height: 4px;
 }
 
-/* Titik penunjuk (Thumb) */
 #progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 12px;
     width: 12px;
     background: #fff;
     border-radius: 50%;
-    margin-top: -4px; /* Agar sejajar dengan track */
-    box-shadow: 0 0 10px #fff; /* Efek glow */
+    margin-top: -4px; 
+    box-shadow: 0 0 10px #fff; 
     transition: 0.3s;
 }
 
@@ -125,16 +116,14 @@ body {
 #playPause {
 
     background: none;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Bordernya ditebalin dikit biar lebih tegas */
+    border: 2px solid rgba(255, 255, 255, 0.5);
     color: white;
     font-size: 1.2rem;
     
-    /* Bikin lingkaran sempurna */
     width: 45px; 
     height: 45px;
     border-radius: 50%;
     
-    /* Hapus padding yang bikin lonjong */
     padding: 0; 
     padding-bottom: 1px;
     margin-top: 15px;
@@ -142,7 +131,6 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 
-    /* Trik biar ikon benar-benar di tengah */
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -151,7 +139,7 @@ body {
 #playPause:hover {
     background: white;
     color: black;
-    transform: scale(1.1); /* Efek membesar sedikit kalau disentuh/di-hover */
+    transform: scale(1.1); 
     color: black;
 }
 
@@ -159,7 +147,7 @@ body {
     margin-top: -400px;
     margin-left: 400px;
     display: flex;
-    justify-content: center; /* Posisi di tengah layar */
+    justify-content: center;
     background: rgba(255, 255, 255, 0.05); 
     padding: 20px;
     border-radius: 30px;
@@ -189,35 +177,59 @@ body {
     object-fit: cover;
     margin-bottom: 2px;
     
-    /* Tambahkan kode ini untuk efek Glow & Vignette */
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); /* Glow tipis */
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), /* Vignette dalam */
-                0 0 30px rgba(255, 255, 255, 0.1); /* Glow luar lebih besar */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 
+                0 0 30px rgba(255, 255, 255, 0.1); 
     
-    transition: 0.3s; /* Tambahkan transisi biar halus saat di-hover */
+    transition: 0.3s; 
 }
 
 .foto-juan1:hover {
-    transform: scale(1.03); /* Sedikit membesar */
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); /* Glow makin terang */
+    transform: scale(1.03); 
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); 
 }
 
+.kata-kata {
+    margin-left: 3%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 20px; 
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    width: 80%; 
+    max-width: 4000px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: 'Montserrat', sans-serif;
+}
 
-/* Container utama langitnya */
+.kata {
+    width: 100%; 
+    height: auto; 
+    border-radius: 0; 
+    margin-bottom: 0px;
+    line-height: 1.6; 
+    text-align: center;
+    box-shadow: none; 
+}
+
 .night-sky {
-    position: fixed; /* Menempel di layar, tidak ikut scroll */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Biar ada di belakang konten (teks, musik, foto) */
-    pointer-events: none; /* Biar bintang gak menghalangi klik tombol */
+    z-index: -1; 
+    pointer-events: none; 
     overflow: hidden;
 }
 
-/* Styling bintangnya */
 .star {
-    position: absolute; /* Tetap absolute terhadap .night-sky yang fixed */
+    position: absolute; 
     background: white;
     border-radius: 50%;
     opacity: 0.8;
@@ -310,7 +322,7 @@ body {
 }
 
 #progress-bar {
-    -webkit-appearance: none;
+    --webkit-appearance: none;
     width: 100%;
     height: 4px; 
     background: rgba(255, 255, 255, 0.2);
@@ -320,20 +332,18 @@ body {
     margin-top: 15px;
 }
 
-/* Bagian bar yang terisi */
 #progress-bar::-webkit-slider-runnable-track {
     height: 4px;
 }
 
-/* Titik penunjuk (Thumb) */
 #progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 12px;
     width: 12px;
     background: #fff;
     border-radius: 50%;
-    margin-top: -4px; /* Agar sejajar dengan track */
-    box-shadow: 0 0 10px #fff; /* Efek glow */
+    margin-top: -4px;
+    box-shadow: 0 0 10px #fff; 
     transition: 0.3s;
 }
 
@@ -343,24 +353,18 @@ body {
 
 #playPause {
     background: none;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Bordernya ditebalin dikit biar lebih tegas */
+    border: 2px solid rgba(255, 255, 255, 0.5); 
     color: white;
     font-size: 1.2rem;
-    
-    /* Bikin lingkaran sempurna */
     width: 45px; 
     height: 45px;
     border-radius: 50%;
-    
-    /* Hapus padding yang bikin lonjong */
     padding: 0; 
     padding-left: 1px;
     margin-top: 15px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-
-    /* Trik biar ikon benar-benar di tengah */
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -369,7 +373,7 @@ body {
 #playPause:hover {
     background: white;
     color: black;
-    transform: scale(1.1); /* Efek membesar sedikit kalau disentuh/di-hover */
+    transform: scale(1.1); 
 }
 
 
@@ -402,18 +406,26 @@ body {
     border-radius: 20px;
     object-fit: cover;
     margin-bottom: 0px;
-    
-    /* Tambahkan kode ini untuk efek Glow & Vignette */
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); /* Glow tipis */
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), /* Vignette dalam */
-                0 0 30px rgba(255, 255, 255, 0.1); /* Glow luar lebih besar */
-    
-    transition: 0.3s; /* Tambahkan transisi biar halus saat di-hover */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 
+                0 0 30px rgba(255, 255, 255, 0.1); 
+    transition: 0.3s; 
 }
 
 .foto-juan1:hover {
-    transform: scale(1.03); /* Sedikit membesar */
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); /* Glow makin terang */
+    transform: scale(1.03); 
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); 
+}
+
+.kata {
+    
+    width: 100%; 
+    height: auto; 
+    border-radius: 0; 
+    margin-bottom: 0px;
+    line-height: 1.6; 
+    text-align: center;
+    box-shadow: none; 
 }
 
 }

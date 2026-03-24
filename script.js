@@ -21,7 +21,6 @@ function createStar() {
     sky.appendChild(star);
 }
 
-// Generate the stars
 for (let i = 0; i < numStars; i++) {
     createStar();
 }
@@ -38,23 +37,21 @@ lagu.onloadedmetadata = function() {
 function playPause() {
     if (lagu.paused) {
         lagu.play();
-        ctrlIcon.innerHTML = "⏸"; // Ganti jadi icon pause
+        ctrlIcon.innerHTML = "⏸"; 
     } else {
         lagu.pause();
-        ctrlIcon.innerHTML = "▶"; // Ganti jadi icon play
+        ctrlIcon.innerHTML = "▶"; 
     }
 }
 
 ctrlIcon.addEventListener("click", playPause);
 
-// Update bar saat lagu jalan
 if (lagu.play) {
     setInterval(() => {
         progress.value = lagu.currentTime;
     }, 500);
 }
 
-// Geser musik lewat bar
 progress.onchange = function() {
     lagu.play();
     lagu.currentTime = progress.value;
